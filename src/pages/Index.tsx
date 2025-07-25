@@ -10,6 +10,7 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeSection, setActiveSection] = useState('main');
+  const [selectedCountry, setSelectedCountry] = useState('sashiania');
 
   const navigationSections = [
     { id: 'main', title: 'Главная', icon: 'Home' },
@@ -18,12 +19,22 @@ const Index = () => {
 
   const featuredCountries = [
     {
+      id: 'sashiania',
       name: 'Сашианийская Республика',
       capital: 'Асхиния',
       population: '23.8 млн',
       area: '92,400 км²',
       government: 'Президентская республика',
       description: 'Развитое государство на северо-западе материка Альвания, известное высокими технологиями и динамичной экономикой.'
+    },
+    {
+      id: 'kusaria',
+      name: 'Кусарийская Демократическая Республика',
+      capital: 'Кусарград',
+      population: '18.2 млн',
+      area: '78,600 км²',
+      government: 'Парламентская республика',
+      description: 'Индустриальное государство на востоке материка Альвания с мощным ВПК и плановой экономикой.'
     }
   ];
 
@@ -175,8 +186,8 @@ const Index = () => {
               <Card className="bg-white border-[#8B4513]/20 text-center">
                 <CardContent className="pt-6">
                   <Icon name="Globe" size={32} className="text-[#8B4513] mx-auto mb-2" />
-                  <div className="text-3xl font-bold text-[#2F4F4F]">1</div>
-                  <div className="text-sm text-[#2F4F4F]/60">Государство</div>
+                  <div className="text-3xl font-bold text-[#2F4F4F]">2</div>
+                  <div className="text-sm text-[#2F4F4F]/60">Государства</div>
                 </CardContent>
               </Card>
               <Card className="bg-white border-[#8B4513]/20 text-center">
@@ -206,6 +217,25 @@ const Index = () => {
 
         {activeSection === 'countries' && (
           <div className="space-y-6">
+            {/* Country selector */}
+            <div className="flex gap-4 mb-6">
+              <Button 
+                variant={selectedCountry === 'sashiania' ? 'default' : 'outline'}
+                onClick={() => setSelectedCountry('sashiania')}
+                className={selectedCountry === 'sashiania' ? 'bg-[#8B4513] hover:bg-[#8B4513]/90' : ''}
+              >
+                Сашианийская Республика
+              </Button>
+              <Button 
+                variant={selectedCountry === 'kusaria' ? 'default' : 'outline'}
+                onClick={() => setSelectedCountry('kusaria')}
+                className={selectedCountry === 'kusaria' ? 'bg-[#8B4513] hover:bg-[#8B4513]/90' : ''}
+              >
+                Кусарийская ДР
+              </Button>
+            </div>
+
+            {selectedCountry === 'sashiania' && (
             <Card className="bg-white border-[#8B4513]/20">
               <CardHeader>
                 <CardTitle className="text-3xl text-[#2F4F4F]" style={{fontFamily: 'Times New Roman, Times, serif'}}>
@@ -460,6 +490,349 @@ const Index = () => {
                 </Tabs>
               </CardContent>
             </Card>
+            )}
+
+            {selectedCountry === 'kusaria' && (
+            <Card className="bg-white border-[#8B4513]/20">
+              <CardHeader>
+                <CardTitle className="text-3xl text-[#2F4F4F]" style={{fontFamily: 'Times New Roman, Times, serif'}}>
+                  Кусарийская Демократическая Республика
+                </CardTitle>
+                <CardDescription className="text-lg">
+                  Индустриальное государство на востоке материка Альвания
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <Tabs defaultValue="general" className="w-full">
+                  <TabsList className="grid w-full grid-cols-4">
+                    <TabsTrigger value="general">Общие сведения</TabsTrigger>
+                    <TabsTrigger value="economy">Экономика</TabsTrigger>
+                    <TabsTrigger value="regions">Регионы</TabsTrigger>
+                    <TabsTrigger value="politics">Политика</TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="general" className="mt-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-[#8B4513]">Основная информация</h3>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span className="font-medium">Полное название:</span>
+                            <span>Кусарийская Демократическая Республика</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Столица:</span>
+                            <span>Кусарград</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Население:</span>
+                            <span>18.2 млн</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Площадь:</span>
+                            <span>78,600 км²</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Форма правления:</span>
+                            <span>Парламентская республика</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Президент:</span>
+                            <span>Анна Железнова</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Премьер-министр:</span>
+                            <span>Дмитрий Стальной</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Валюта:</span>
+                            <span>Кусарийский рубл (KRB)</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">ВВП:</span>
+                            <span>650 млрд кусарийских рублей</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Независимость:</span>
+                            <span>3 декабря 1947 года</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-[#8B4513]">География и климат</h3>
+                        <div className="text-sm space-y-2">
+                          <p><strong>Расположение:</strong> Восток материка Альвания</p>
+                          <p><strong>Границы:</strong></p>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Запад — Сашианийская Республика</li>
+                            <li>• Север — Кусарийское море</li>
+                            <li>• Восток — Государство Новодания</li>
+                            <li>• Юг — Горные хребты Альваниды</li>
+                          </ul>
+                          <p><strong>Рельеф:</strong></p>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Север — промышленные равнины</li>
+                            <li>• Центр — холмистая местность</li>
+                            <li>• Юг — предгорья Альванид</li>
+                          </ul>
+                          <p><strong>Водные объекты:</strong> Река Кусара, озеро Стальное</p>
+                          <p><strong>Климат:</strong> Умеренно-континентальный с холодными зимами</p>
+                        </div>
+                      </div>
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="economy" className="mt-6">
+                    <div className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <Card>
+                          <CardHeader>
+                            <CardTitle className="text-lg text-[#8B4513]">Макроэкономические показатели</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex justify-between">
+                                <span>ВВП:</span>
+                                <span className="font-medium">650 млрд кусарийских рублей</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Рост ВВП:</span>
+                                <span className="font-medium text-orange-600">2.1%</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Безработица:</span>
+                                <span className="font-medium">7.8%</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Инфляция:</span>
+                                <span className="font-medium">8.5%</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Экспорт:</span>
+                                <span className="font-medium">180 млрд рублей</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Импорт:</span>
+                                <span className="font-medium">210 млрд рублей</span>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                        
+                        <Card>
+                          <CardHeader>
+                            <CardTitle className="text-lg text-[#8B4513]">Структура экономики</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="space-y-3">
+                              <div className="flex justify-between items-center">
+                                <span className="text-sm">ВПК и машиностроение</span>
+                                <Badge variant="outline" className="text-[#8B4513]">42%</Badge>
+                              </div>
+                              <div className="flex justify-between items-center">
+                                <span className="text-sm">Металлургия</span>
+                                <Badge variant="outline" className="text-[#8B4513]">28%</Badge>
+                              </div>
+                              <div className="flex justify-between items-center">
+                                <span className="text-sm">Энергетика</span>
+                                <Badge variant="outline" className="text-[#8B4513]">15%</Badge>
+                              </div>
+                              <div className="flex justify-between items-center">
+                                <span className="text-sm">Сельское хозяйство</span>
+                                <Badge variant="outline" className="text-[#8B4513]">8%</Badge>
+                              </div>
+                              <div className="flex justify-between items-center">
+                                <span className="text-sm">Услуги</span>
+                                <Badge variant="outline" className="text-[#8B4513]">7%</Badge>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                      
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg text-[#8B4513]">Государственный бюджет (195 млрд рублей)</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <Table>
+                            <TableHeader>
+                              <TableRow>
+                                <TableHead>Сфера</TableHead>
+                                <TableHead>Расходы</TableHead>
+                                <TableHead>% бюджета</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              <TableRow>
+                                <TableCell className="font-medium">Оборона и ВПК</TableCell>
+                                <TableCell>68 млрд</TableCell>
+                                <TableCell>34.9%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Промышленность</TableCell>
+                                <TableCell>39 млрд</TableCell>
+                                <TableCell>20.0%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Здравоохранение</TableCell>
+                                <TableCell>25 млрд</TableCell>
+                                <TableCell>12.8%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Образование</TableCell>
+                                <TableCell>21 млрд</TableCell>
+                                <TableCell>10.8%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Инфраструктура</TableCell>
+                                <TableCell>19 млрд</TableCell>
+                                <TableCell>9.7%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Социальное обеспечение</TableCell>
+                                <TableCell>15 млрд</TableCell>
+                                <TableCell>7.7%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Прочие расходы</TableCell>
+                                <TableCell>8 млрд</TableCell>
+                                <TableCell>4.1%</TableCell>
+                              </TableRow>
+                            </TableBody>
+                          </Table>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="regions" className="mt-6">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg text-[#8B4513]">Административное деление</CardTitle>
+                        <CardDescription>4 области и 1 столичный округ</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>Регион</TableHead>
+                              <TableHead>Административный центр</TableHead>
+                              <TableHead>Население</TableHead>
+                              <TableHead>Особенности</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell className="font-medium">Столичный округ Кусарград</TableCell>
+                              <TableCell>Кусарград</TableCell>
+                              <TableCell>6.2 млн</TableCell>
+                              <TableCell className="text-sm">Правительство, ВПК, машиностроение</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium">Северная область</TableCell>
+                              <TableCell>Портоград</TableCell>
+                              <TableCell>4.1 млн</TableCell>
+                              <TableCell className="text-sm">Порты, судостроение, рыболовство</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium">Центральная область</TableCell>
+                              <TableCell>Сталинск</TableCell>
+                              <TableCell>3.8 млн</TableCell>
+                              <TableCell className="text-sm">Металлургия, горнодобыча</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium">Восточная область</TableCell>
+                              <TableCell>Новый Кусар</TableCell>
+                              <TableCell>2.7 млн</TableCell>
+                              <TableCell className="text-sm">Энергетика, химическая промышленность</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium">Южная область</TableCell>
+                              <TableCell>Горноград</TableCell>
+                              <TableCell>1.4 млн</TableCell>
+                              <TableCell className="text-sm">Добыча полезных ископаемых</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  
+                  <TabsContent value="politics" className="mt-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg text-[#8B4513]">Государственное устройство</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Президент</h4>
+                            <p className="text-sm text-gray-600">Избирается парламентом на 4 года, представительные функции</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Парламент</h4>
+                            <ul className="text-sm text-gray-600 ml-4">
+                              <li>• Народное Собрание (единственная палата)</li>
+                              <li>• 180 депутатов, избираются на 4 года</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Правительство</h4>
+                            <p className="text-sm text-gray-600">Премьер-министр назначается парламентским большинством</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                      
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg text-[#8B4513]">Международные отношения</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <div>
+                            <h4 className="font-medium text-red-600">Противники</h4>
+                            <p className="text-sm text-gray-600">Сашианийская Республика (территориальные споры за газовые месторождения)</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-orange-600">Спонсоры</h4>
+                            <p className="text-sm text-gray-600">Ортания (поддержка ВПК, политическая поддержка)</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-blue-600">Нейтральные</h4>
+                            <p className="text-sm text-gray-600">Новодания (торговое сотрудничество)</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Организации</h4>
+                            <ul className="text-sm text-gray-600">
+                              <li>• Союз Восточных Республик</li>
+                              <li>• Организация Промышленного Сотрудничества</li>
+                            </ul>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                    <Card className="mt-6">
+                      <CardHeader>
+                        <CardTitle className="text-lg text-[#8B4513]">Исторические конфликты</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3 text-sm">
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Газовый конфликт (2019-2023)</h4>
+                            <p className="text-gray-600">Спор с Сашианией о месторождениях в приграничной зоне. Кусария заявляет права на 60% запасов на основе исторических границ периода Ортанийской колонизации.</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Военная доктрина</h4>
+                            <p className="text-gray-600">Развитие ВПК как ответ на технологическое превосходство Сашиании. Упор на количественное превосходство и оборонительные системы.</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
+              </CardContent>
+            </Card>
+            )}
           </div>
         )}
 
