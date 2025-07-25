@@ -13,13 +13,7 @@ const Index = () => {
 
   const navigationSections = [
     { id: 'main', title: 'Главная', icon: 'Home' },
-    { id: 'countries', title: 'Страны', icon: 'Globe' },
-    { id: 'geography', title: 'География', icon: 'MapPin' },
-    { id: 'history', title: 'История', icon: 'Clock' },
-    { id: 'culture', title: 'Культура', icon: 'Palette' },
-    { id: 'politics', title: 'Политика', icon: 'Users' },
-    { id: 'economy', title: 'Экономика', icon: 'TrendingUp' },
-    { id: 'search', title: 'Поиск', icon: 'Search' }
+    { id: 'countries', title: 'Страны', icon: 'Globe' }
   ];
 
   const featuredCountries = [
@@ -469,43 +463,7 @@ const Index = () => {
           </div>
         )}
 
-        {activeSection === 'search' && (
-          <Card className="bg-white border-[#8B4513]/20">
-            <CardHeader>
-              <CardTitle className="text-2xl text-[#2F4F4F]">Поиск по энциклопедии</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <Input
-                  type="search"
-                  placeholder="Введите поисковый запрос..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full"
-                />
-                <div className="text-sm text-gray-600">
-                  {searchTerm ? (
-                    <p>Найдено результатов для "{searchTerm}": 0</p>
-                  ) : (
-                    <p>Введите запрос для поиска по статьям энциклопедии</p>
-                  )}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
 
-        {/* Other sections placeholder */}
-        {['geography', 'history', 'culture', 'politics', 'economy'].includes(activeSection) && activeSection !== 'countries' && (
-          <Card className="bg-white border-[#8B4513]/20">
-            <CardHeader>
-              <CardTitle className="text-2xl text-[#2F4F4F] capitalize">{navigationSections.find(s => s.id === activeSection)?.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">Раздел "{navigationSections.find(s => s.id === activeSection)?.title}" находится в разработке. Скоро здесь появится подробная информация.</p>
-            </CardContent>
-          </Card>
-        )}
       </main>
 
       {/* Footer */}
