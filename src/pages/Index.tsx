@@ -33,8 +33,8 @@ const Index = () => {
       capital: 'Кусарград',
       population: '18.2 млн',
       area: '78,600 км²',
-      government: 'Парламентская республика',
-      description: 'Индустриальное государство на востоке материка Альвания с мощным ВПК и плановой экономикой.'
+      government: 'Социалистическая республика',
+      description: 'Авторитарное государство на востоке материка Альвания с мощным ВПК и плановой экономикой.'
     }
   ];
 
@@ -499,7 +499,7 @@ const Index = () => {
                   Кусарийская Демократическая Республика
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  Индустриальное государство на востоке материка Альвания
+                  Авторитарное социалистическое государство на востоке материка Альвания
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -534,15 +534,15 @@ const Index = () => {
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Форма правления:</span>
-                            <span>Парламентская республика</span>
+                            <span>Социалистическая республика</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-medium">Президент:</span>
-                            <span>Анна Железнова</span>
+                            <span className="font-medium">Генеральный секретарь:</span>
+                            <span>Карлет Железен</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-medium">Премьер-министр:</span>
-                            <span>Дмитрий Стальной</span>
+                            <span className="font-medium">Председатель Совмина:</span>
+                            <span>Лилиет Стален</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Валюта:</span>
@@ -553,8 +553,12 @@ const Index = () => {
                             <span>650 млрд кусарийских рублей</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-medium">Независимость:</span>
+                            <span className="font-medium">Социалистическая революция:</span>
                             <span>3 декабря 1947 года</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Правящая партия:</span>
+                            <span>Кусарийская Рабочая Партия</span>
                           </div>
                         </div>
                       </div>
@@ -566,7 +570,7 @@ const Index = () => {
                           <ul className="ml-4 space-y-1">
                             <li>• Запад — Сашианийская Республика</li>
                             <li>• Север — Кусарийское море</li>
-                            <li>• Восток — Государство Новодания</li>
+                            <li>• Восток — Государство Новет</li>
                             <li>• Юг — Горные хребты Альваниды</li>
                           </ul>
                           <p><strong>Рельеф:</strong></p>
@@ -575,7 +579,7 @@ const Index = () => {
                             <li>• Центр — холмистая местность</li>
                             <li>• Юг — предгорья Альванид</li>
                           </ul>
-                          <p><strong>Водные объекты:</strong> Река Кусара, озеро Стальное</p>
+                          <p><strong>Водные объекты:</strong> Река Кусара, озеро Железет</p>
                           <p><strong>Климат:</strong> Умеренно-континентальный с холодными зимами</p>
                         </div>
                       </div>
@@ -652,7 +656,7 @@ const Index = () => {
                       
                       <Card>
                         <CardHeader>
-                          <CardTitle className="text-lg text-[#8B4513]">Государственный бюджет (195 млрд рублей)</CardTitle>
+                          <CardTitle className="text-lg text-[#8B4513]">Государственный план (195 млрд рублей)</CardTitle>
                         </CardHeader>
                         <CardContent>
                           <Table>
@@ -670,9 +674,14 @@ const Index = () => {
                                 <TableCell>34.9%</TableCell>
                               </TableRow>
                               <TableRow>
-                                <TableCell className="font-medium">Промышленность</TableCell>
+                                <TableCell className="font-medium">Тяжелая промышленность</TableCell>
                                 <TableCell>39 млрд</TableCell>
                                 <TableCell>20.0%</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell className="font-medium">Партийный аппарат</TableCell>
+                                <TableCell>12 млрд</TableCell>
+                                <TableCell>6.2%</TableCell>
                               </TableRow>
                               <TableRow>
                                 <TableCell className="font-medium">Здравоохранение</TableCell>
@@ -727,29 +736,29 @@ const Index = () => {
                               <TableCell className="font-medium">Столичный округ Кусарград</TableCell>
                               <TableCell>Кусарград</TableCell>
                               <TableCell>6.2 млн</TableCell>
-                              <TableCell className="text-sm">Правительство, ВПК, машиностроение</TableCell>
+                              <TableCell className="text-sm">Партийный центр, ВПК, машиностроение</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium">Северная область</TableCell>
-                              <TableCell>Портоград</TableCell>
+                              <TableCell>Портет</TableCell>
                               <TableCell>4.1 млн</TableCell>
                               <TableCell className="text-sm">Порты, судостроение, рыболовство</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium">Центральная область</TableCell>
-                              <TableCell>Сталинск</TableCell>
+                              <TableCell>Железенск</TableCell>
                               <TableCell>3.8 млн</TableCell>
                               <TableCell className="text-sm">Металлургия, горнодобыча</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium">Восточная область</TableCell>
-                              <TableCell>Новый Кусар</TableCell>
+                              <TableCell>Новет Кусар</TableCell>
                               <TableCell>2.7 млн</TableCell>
                               <TableCell className="text-sm">Энергетика, химическая промышленность</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium">Южная область</TableCell>
-                              <TableCell>Горноград</TableCell>
+                              <TableCell>Горнет</TableCell>
                               <TableCell>1.4 млн</TableCell>
                               <TableCell className="text-sm">Добыча полезных ископаемых</TableCell>
                             </TableRow>
@@ -767,19 +776,23 @@ const Index = () => {
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <h4 className="font-medium text-[#2F4F4F]">Президент</h4>
-                            <p className="text-sm text-gray-600">Избирается парламентом на 4 года, представительные функции</p>
+                            <h4 className="font-medium text-[#2F4F4F]">Генеральный секретарь КРП</h4>
+                            <p className="text-sm text-gray-600">Пожизненный лидер партии и государства, избирается Политбюро</p>
                           </div>
                           <div>
-                            <h4 className="font-medium text-[#2F4F4F]">Парламент</h4>
+                            <h4 className="font-medium text-[#2F4F4F]">Верховный Совет</h4>
                             <ul className="text-sm text-gray-600 ml-4">
-                              <li>• Народное Собрание (единственная палата)</li>
-                              <li>• 180 депутатов, избираются на 4 года</li>
+                              <li>• 280 депутатов от трудовых коллективов</li>
+                              <li>• Формально высший орган власти</li>
                             </ul>
                           </div>
                           <div>
-                            <h4 className="font-medium text-[#2F4F4F]">Правительство</h4>
-                            <p className="text-sm text-gray-600">Премьер-министр назначается парламентским большинством</p>
+                            <h4 className="font-medium text-[#2F4F4F]">Совет министров</h4>
+                            <p className="text-sm text-gray-600">Исполнительный орган, подчиняется Политбюро КРП</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-[#2F4F4F]">Идеология</h4>
+                            <p className="text-sm text-gray-600">Кусарийский социализм - синтез марксизма и националистических идей</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -799,7 +812,7 @@ const Index = () => {
                           </div>
                           <div>
                             <h4 className="font-medium text-blue-600">Нейтральные</h4>
-                            <p className="text-sm text-gray-600">Новодания (торговое сотрудничество)</p>
+                            <p className="text-sm text-gray-600">Новет (ограниченное торговое сотрудничество)</p>
                           </div>
                           <div>
                             <h4 className="font-medium text-[#2F4F4F]">Организации</h4>
@@ -819,11 +832,11 @@ const Index = () => {
                         <div className="space-y-3 text-sm">
                           <div>
                             <h4 className="font-medium text-[#2F4F4F]">Газовый конфликт (2019-2023)</h4>
-                            <p className="text-gray-600">Спор с Сашианией о месторождениях в приграничной зоне. Кусария заявляет права на 60% запасов на основе исторических границ периода Ортанийской колонизации.</p>
+                            <p className="text-gray-600">Спор с Сашианией о газовых месторождениях в приграничной зоне. Кусария заявляет права на 60% запасов, ссылаясь на "исторические земли трудящихся Кусарии".</p>
                           </div>
                           <div>
                             <h4 className="font-medium text-[#2F4F4F]">Военная доктрина</h4>
-                            <p className="text-gray-600">Развитие ВПК как ответ на технологическое превосходство Сашиании. Упор на количественное превосходство и оборонительные системы.</p>
+                            <p className="text-gray-600">"Социалистическая оборона от капиталистической агрессии". Развитие ВПК для "защиты завоеваний революции" и экспорта оружия союзникам.</p>
                           </div>
                         </div>
                       </CardContent>
