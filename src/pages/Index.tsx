@@ -29,7 +29,7 @@ const Index = () => {
       population: '23.8 млн',
       area: '92,400 км²',
       government: 'Президентская республика',
-      description: 'Развитое государство на юго-западе материка Альвания, известное высокими технологиями и динамичной экономикой.'
+      description: 'Развитое государство на северо-западе материка Альвания, известное высокими технологиями и динамичной экономикой.'
     }
   ];
 
@@ -218,7 +218,7 @@ const Index = () => {
                   Сашианийская Республика
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  Суверенное государство на юго-западе материка Альвания
+                  Суверенное государство на северо-западе материка Альвания
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -280,7 +280,7 @@ const Index = () => {
                       <div className="space-y-4">
                         <h3 className="text-xl font-bold text-[#8B4513]">География и климат</h3>
                         <div className="text-sm space-y-2">
-                          <p><strong>Расположение:</strong> Юго-запад материка Альвания</p>
+                          <p><strong>Расположение:</strong> Северо-запад материка Альвания</p>
                           <p><strong>Границы:</strong></p>
                           <ul className="ml-4 space-y-1">
                             <li>• Север — Сашианийский океан</li>
